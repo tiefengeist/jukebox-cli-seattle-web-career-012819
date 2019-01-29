@@ -47,6 +47,7 @@ def run (songs)
     case choice
       when "exit"
         exit_jukebox
+        break
       when "help"
         help
       when "list"
@@ -57,4 +58,4 @@ def run (songs)
         puts "Invalid input, please try again"
     end
   end
-end  
+end
