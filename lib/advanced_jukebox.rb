@@ -30,17 +30,33 @@ end
 def play(my_songs)
   puts "Please enter a song name or number:"
   choice = gets.chomp
-  if my_songs.include? choice
-    system "open #{my_songs[selection]}"
+  if my_songs.include?(choice)
+    system "open #{my_songs[choice]}"
   else
     puts "Invalid input, please try again"
-  end  
+  end
 end
 
 def exit_jukebox
-  #this method is the same as in jukebox.rb
+  puts "Goodbye"
 end
 
 def run(my_songs)
-  #this method is the same as in jukebox.rb
+  help
+  while true
+    puts "Please enter a command:"
+    choice = gets.chomp
+    case choice
+      when "exit"
+        exit_jukebox
+      when "help"
+        help
+      when "list"
+        list(my_songs)
+      when "play"
+        play(my_songs)
+      else
+        puts "Invalid input, please try again"
+    end
+  end
 end
